@@ -51,7 +51,7 @@ function checkPythagoras (x, y, z){
 
 checkPythagoras(3, 4, 5);
 
-
+checkPythagoras(6, 3, 8)
 
 
 
@@ -84,17 +84,25 @@ console.log("TASK 4")
 
 
 function checkDeg(x){
-    if(x > 0 && x <= 90){
+    if(x  < 0 || x > 180){
+        console.log("Please choose number between 0 and 180")
+    }else if(x > 0 && x < 90){
         console.log("Acute angle: An angle between 0 and 90 degrees.")
     }else if(x == 90){
         console.log("Right angle: An 90 degree angle.")
-    }else if(x > 90 && x <= 180){
+    }else if(x > 90 && x < 180){
         console.log("Obtuse angle: An angle between 90 and 180 degrees.")
-    }else if(x == 180){
+    }else {
         console.log("Straight angle: A 180 degree angle.")
+    
     }
     
 }
 
 
+checkDeg(-21);
+checkDeg(181);
 checkDeg(154);
+checkDeg(90);
+checkDeg(56);
+checkDeg(180);
