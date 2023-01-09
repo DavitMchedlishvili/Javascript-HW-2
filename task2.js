@@ -6,14 +6,14 @@
 const sampleObject = {
     isItarable : false ,
     sampleArray : [12,63,21,34,98,57]
-}
+};
 
 
 
 
 
-function task1(){
-    if(typeof(sampleObject.isItarable) == 'boolean'){
+function task1(x){
+    if(typeof x.isItarable == 'boolean'){
         for (i= 0; i <sampleObject.sampleArray.length; i++)
         console.log(sampleObject.sampleArray[i]);
         
@@ -26,7 +26,11 @@ function task1(){
 
 
 
-task1();
+task1(sampleObject);
+
+
+
+
 
 
 
@@ -60,16 +64,22 @@ checkPythagoras(6, 3, 8)
 
 console.log("TASK 3")
 
+// numbersArray = [2,14,25,75,11,6];
+
+
+
+function minMax(x){
+    let minValue = Math.min(...x);
+    let maxValue = Math.max(...x);
+    console.log(`Min value is ${minValue} and Max value is ${maxValue}`);
+}
 
 
 
 
 
 
-
-
-
-
+minMax([2,14,25,75,11,6]);
 
 
 
@@ -106,3 +116,48 @@ checkDeg(154);
 checkDeg(90);
 checkDeg(56);
 checkDeg(180);
+
+
+
+
+
+
+//  ------------------   Task 5
+
+// console.log("TASK 5")
+
+
+
+
+// const students = [{name: "Gio", grade: 75,}, {name: "Shio", grade: 96,}, {name: "Rio", grade: 65,}, { name: "Jio", grade: 41,}, {name: "Pio", grade: 53,}]
+
+
+// function checkStundentGrade(){
+//     for(){
+//         if(students.grade >= 81){
+//             students.finalResult = "A";
+        
+//     }else if(students.grade >= 71){
+//         students.finalResult = "C";
+    
+//     }else if(students.grade >= 61 ){
+//         students.finalResult = "D";
+    
+//     }else if(students.grade >= 51){
+//         students.finalResult = "E";
+    
+//     }else{
+//         students.finalResult = "F";
+//     }
+//     }
+ 
+
+// return students;
+
+// }
+
+
+// students = checkStundentGrade(students);
+// console.log(students);
+
+
