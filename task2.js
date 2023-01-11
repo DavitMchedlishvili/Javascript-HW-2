@@ -12,10 +12,10 @@ const sampleObject = {
 
 
 
-function task1(x){
-    if(typeof x.isItarable == 'boolean'){
-        for (i= 0; i <sampleObject.sampleArray.length; i++)
-        console.log(sampleObject.sampleArray[i]);
+function checkAndLog(x){
+    if(x.isItarable){
+        for (i= 0; i <x.sampleArray.length; i++)
+        console.log(x.sampleArray[i]);
         
     }else{
         console.log("provided array isn't itarable");
@@ -26,7 +26,11 @@ function task1(x){
 
 
 
-task1(sampleObject);
+checkAndLog(sampleObject);
+
+
+
+
 
 
 
@@ -44,18 +48,19 @@ console.log("TASK 2")
 
 
 function checkPythagoras (x, y, z){
-    if(x**2 + y**2 === z**2 ){
-        console.log(true)
-    }else{
-        console.log(false)
+    if(x**2 + y**2 === z**2 || x**2 + z**2 === y**2 || y**2 +  z**2 === x** 2) return true;
+    return false;
+        
+    
     }
-}
 
 
 
-checkPythagoras(3, 4, 5);
 
-checkPythagoras(6, 3, 8)
+const checkrest = checkPythagoras(3, 4, 5);
+
+console.log(checkrest)
+
 
 
 
@@ -124,40 +129,43 @@ checkDeg(180);
 
 //  ------------------   Task 5
 
-// console.log("TASK 5")
+console.log("TASK 5")
 
 
 
 
-// const students = [{name: "Gio", grade: 75,}, {name: "Shio", grade: 96,}, {name: "Rio", grade: 65,}, { name: "Jio", grade: 41,}, {name: "Pio", grade: 53,}]
+const students = [{name: "Gio", grade: 75,}, {name: "Shio", grade: 96,}, {name: "Rio", grade: 65,}, { name: "Jio", grade: 41,}, {name: "Pio", grade: 53,}]
 
 
-// function checkStundentGrade(){
-//     for(){
-//         if(students.grade >= 81){
-//             students.finalResult = "A";
+function checkStundentGrade(studentsArr){
+    for(let i=0; i < studentsArr.length; i++){
+        let students = studentsArr[i];
+        let finalResult = '';
+        let grade = students.grade
+        if(grade >= 81){
+          students.finalResult = "A";
         
-//     }else if(students.grade >= 71){
-//         students.finalResult = "C";
+    }else if(grade >= 71){
+        students.finalResult = "C";
     
-//     }else if(students.grade >= 61 ){
-//         students.finalResult = "D";
+    }else if(grade >= 61 ){
+        students.finalResult = "D";
     
-//     }else if(students.grade >= 51){
-//         students.finalResult = "E";
+    }else if(grade >= 51){
+        students.finalResult = "E";
     
-//     }else{
-//         students.finalResult = "F";
-//     }
-//     }
- 
+    }else{
+        finalResult = "F";
+        students.finalresult = finalResult;
+    }
+    }
+    
+    return studentsArr;
+}
 
-// return students;
-
-// }
 
 
-// students = checkStundentGrade(students);
-// console.log(students);
+const finalResults = checkStundentGrade(students);
+console.log(finalResults);
 
 
